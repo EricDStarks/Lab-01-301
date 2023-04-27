@@ -4,6 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 import HornedBeast from './HornedBeast';
 import Main from './Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App(props) {
   let myName = "Eric Starks"
   return (

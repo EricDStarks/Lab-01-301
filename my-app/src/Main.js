@@ -3,13 +3,22 @@ import './App.css';
 import Header from './Header';
 import Footer from './Footer';
 import HornedBeast from './HornedBeast';
+import BeastData from './data.json';
 
 function Main(props) {
   let myName = "Eric Starks"
+  // go from array of beast objects (BeastData) to array of HornedBeast components.
+
+  let beastsHTML = []
+  for (let i = 0; i < BeastData.length; i++ ){
+    // let html = <h1>{BeastData[i].title}</h1>
+    let html = <HornedBeast title={BeastData[i].title} image={BeastData[i].image_url} description={BeastData[i].description} />
+    beastsHTML.push (html)
+  }
+
   return (
     <>
-    <HornedBeast description="This a Ram" image={"https://tailandfur.com/wp-content/uploads/2014/08/animals-with-horns-20.jpg"} title={"First Horned Beast"}/>
-    <HornedBeast description="This is a Goat" image={"https://th.bing.com/th/id/R.4d9d334d6995b22d710e978e155e2308?rik=yQ66RdQaALU%2fsA&pid=ImgRaw&r=0"} title={"Second Horned Beast"} />
+      {beastsHTML}
     </>
   );
 }
