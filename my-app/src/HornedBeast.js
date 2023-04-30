@@ -24,7 +24,7 @@ function HornedBeast(props) {
     <h2>{props.title}</h2>
     <img onClick={onClick} src={props.image} width="200" height="200" alt="HornedBeast" title="HornedBeast"></img>
     <p>{props.description}</p>
-    
+    : {heartLikes}
     <button onClick={heartClick}>{"💙"}</button>
     </Card>
   );
