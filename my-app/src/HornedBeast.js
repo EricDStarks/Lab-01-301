@@ -3,29 +3,44 @@ import './App.css';
 import Header from './Header';
 import Footer from './Footer';
 import {useState} from'react'
+import React from 'react';
 import Card from 'react-bootstrap/Card';
+
 function HornedBeast(props) {
   const [likes, setLikes] =useState(0)
   const [heartLikes, setHeartLikes] =useState(0)
   let heart = "💙"
   
-  function onClick(){
+  //function onClick({beasts, onBeastClick}){
+    
+  //}
 
-   setLikes(likes+1)
-  }
+   //setLikes(likes+1)
+  //}
 
   function heartClick(){
 
     setHeartLikes(heartLikes+1)
   }
 
+  // function BeastHorned({beasts, onBeastClick})
+
   return (
     <Card>
+    {/* <Modal show={!HornedBeast}></Modal> */}
     <h2>{props.title}</h2>
-    <img onClick={onClick} src={props.image} width="200" height="200" alt="HornedBeast" title="HornedBeast"></img>
+    <img onClick={()=>{props.onBeastClick({title:props.title, image_url:props.image, description:props.description})}} src={props.image} width="100" height="100" alt="HornedBeast" title="HornedBeast"></img>
     <p>{props.description}</p>
-    : {heartLikes}
+    {heartLikes}
     <button onClick={heartClick}>{"💙"}</button>
+    {/* <div>
+      {beasts.map(beast => (
+        <div key={beast.id} onClick={() => onBeastClick(beast)}>
+          <img src={beast.image} alt={beast.title} />
+          <p>{beast.title}</p>
+        </div>    
+      ))}
+    </div>   */}
     </Card>
   );
 }

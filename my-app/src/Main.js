@@ -12,7 +12,7 @@ function Main(props) {
   let beastsHTML = []
   for (let i = 0; i < BeastData.length; i++ ){
     // let html = <h1>{BeastData[i].title}</h1>
-    let html = <HornedBeast title={BeastData[i].title} image={BeastData[i].image_url} description={BeastData[i].description} />
+    let html = <HornedBeast onBeastClick={props.onBeastClick} title={BeastData[i].title} image={BeastData[i].image_url} description={BeastData[i].description} />
     beastsHTML.push (html)
   }
 
