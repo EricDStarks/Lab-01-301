@@ -7,3 +7,12 @@ function FilterBeast({}) {
 
     
 }
+
+
+
+<Form>
+    <Form.group>
+        <Form.label>Select Amount of Horns</Form.label>
+        <Form.select value={selectedChoice} onChange={}></Form.select>
+    </Form.group>
+</Form>
