@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import HornedBeast from './HornedBeast';
 import BeastData from './data.json';
+import SearchBeast from './SearchBeast';
 
 function Main(props) {
   let myName = "Eric Starks"
@@ -18,7 +19,8 @@ function Main(props) {
 
   return (
     <>
-      {beastsHTML}
+    <SearchBeast />
+      {/* {beastsHTML} */}
     </>
   );
 }
