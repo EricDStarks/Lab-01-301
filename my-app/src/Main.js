@@ -20,7 +20,7 @@ function Main(props) {
   return (
     <>
     <SearchBeast />
-      {beastsHTML}
+      {/* {beastsHTML} */}
     </>
   );
 }

@@ -8,7 +8,7 @@ import BeastData from './data.json';
 
 function SearchBeast(props) {
     const [choice, setChoice] = useState("1")
-    let BeastData = [];
+    //let BeastData = [];
     var beasts = [<HornedBeast />, <HornedBeast />]
     var filteredData = BeastData.filter(function(element){
         if (element.horns == choice) {
@@ -18,6 +18,7 @@ function SearchBeast(props) {
             return false
         }
     })
+    
     return (
         <div className="App">
             <Form.Select onChange={function(event){
@@ -30,7 +31,7 @@ function SearchBeast(props) {
                 <option value="100">Hundred</option>
             </Form.Select>
         {filteredData.map ((element) => {
-                return <HornedBeast setSelectedBeast={props.setSelectedBeast} updateFunction={props.updateFunction} imgurl={element.img_url} description={element.description} title={element.title} />  
+                return <HornedBeast setSelectedBeast={props.setSelectedBeast} updateFunction={props.updateFunction} image={element.image_url} description={element.description} title={element.title} />  
             })}
         <h1>{props.title}</h1>
         <h1>{choice}</h1>    
