@@ -5,6 +5,8 @@ import Footer from './Footer';
 import {useState} from'react'
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { Modal, Button } from 'react-bootstrap';
+import SelectedBeast from './SelectedBeast';
 
 function HornedBeast(props) {
   const [likes, setLikes] =useState(0)
@@ -24,12 +26,15 @@ function HornedBeast(props) {
   }
 
   // function BeastHorned({beasts, onBeastClick})
+function clickFunction(){
+  props.onBeastClick({title:props.title, image_url:props.image, description:props.description})
 
+}
   return (
     <Card>
-    {/* <Modal show={!HornedBeast}></Modal> */}
+    <Modal show={!HornedBeast}></Modal> 
     <h2>{props.title}</h2>
-    <img onClick={()=>{props.onBeastClick({title:props.title, image_url:props.image, description:props.description})}} src={props.image} width="100" height="100" alt="HornedBeast" title="HornedBeast"></img>
+    <img onClick={clickFunction} src={props.image} width="100" height="100" alt="HornedBeast" title="HornedBeast"></img>
     <p>{props.description}</p>
     {heartLikes}
     <button onClick={heartClick}>{"💙"}</button>

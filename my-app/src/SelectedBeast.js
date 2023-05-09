@@ -7,7 +7,7 @@ function SelectedBeast({beast, onClose}) {
     // }
 
     return (
-        <Modal show={!!beast} onHide={onClose}>
+        <Modal show={beast} onHide={onClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{beast.title}</Modal.Title>
             </Modal.Header>
